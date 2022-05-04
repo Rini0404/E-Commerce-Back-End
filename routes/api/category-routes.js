@@ -9,7 +9,9 @@ router.get('/', (req, res) => {
   Category.findAll({
     include: {
       model: Product,
-        attributes: ['product_name']
+        attributes: [
+          'product_name'
+        ]
     }
   }).then(categoryData => res.json(categoryData))
     .catch(err => {
@@ -21,6 +23,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   // find one category by its `id` value
   // be sure to include its associated Products
+ 
   Category.findOne({
     where: { 
       id: req.params.id,
@@ -61,6 +64,7 @@ router.put('/:id', (req, res) => {
     }
   }
   ).then(categoryData => {
+    
     if(!categoryData) {
       res.status(404).json({ message: 'No such category, try again.' });
         return;
