@@ -27,7 +27,9 @@ router.get('/:id', (req, res) => {
     },
     include: {
       model: Product,
-        attributes: [ category_id]
+        attributes: [
+          'category_id'
+        ]
     }
   }).then(categoryData => res.json(categoryData))  
     .catch (err => {
@@ -60,7 +62,7 @@ router.put('/:id', (req, res) => {
   }
   ).then(categoryData => {
     if(!categoryData) {
-      res.status(404).json({ message: 'Incorrect Id! No such category, try again.' });
+      res.status(404).json({ message: 'No such category, try again.' });
         return;
     }
     res.json(categoryData);
@@ -76,7 +78,7 @@ router.delete('/:id', (req, res) => {
   Category.destroy({
     where:{
       id : req.params.id
-    }, 
+    }
   }).then(categoryData => {
     if (!categoryData) {
       res.status(404).json({ message: 'Incorrect Id! No such category, try again.'})
