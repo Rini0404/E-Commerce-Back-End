@@ -14,6 +14,7 @@ Category.init(
           primaryKey: true,
             autoIncrement: true,
     },
+    // TODO: add types and category name
       category_name: {
         type: DataTypes.STRING,
       }

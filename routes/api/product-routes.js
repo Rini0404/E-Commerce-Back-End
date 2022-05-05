@@ -70,7 +70,7 @@ router.post('/', (req, res) => {
   Product.create({
     product_name: req.body.product_name,
       price: req.body.price,
-       
+      
     stock: req.body.stock,
           category__id: req.body.category__id,
             tagIds: req.body.tagIds,
@@ -110,7 +110,9 @@ router.put('/:id', (req, res) => {
     })
     .then((productTags) => {
       // get list of current tag_ids
-      const productTagIds = productTags.map(({ tag_id }) => tag_id);
+      const productTagIds = productTags.map((
+        { tag_id }
+        ) => tag_id);
       // create filtered list of new tag_ids
       const newProductTags = req.body.tagIds
         .filter((tag_id) => !productTagIds.includes(tag_id))

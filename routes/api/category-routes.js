@@ -66,7 +66,9 @@ router.put('/:id', (req, res) => {
   ).then(categoryData => {
     
     if(!categoryData) {
-      res.status(404).json({ message: 'No such category, try again.' });
+      res.status(404).json({ 
+        message: 'No such category, try again.' 
+      });
         return;
     }
     res.json(categoryData);
@@ -85,7 +87,11 @@ router.delete('/:id', (req, res) => {
     }
   }).then(categoryData => {
     if (!categoryData) {
-      res.status(404).json({ message: 'Incorrect Id! No such category, try again.'})
+      res.status(404).json({
+
+        message: 'Incorrect Id! No such category, try again.'
+      
+      })
       return;
     }
     res.json(categoryData);
