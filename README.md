@@ -20,7 +20,7 @@
 # 🖼Picture
 ## ![deti](https://user-images.githubusercontent.com/95727555/166813776-2396208d-8071-489f-87b7-cad2330f05d5.PNG)
 # 📖Description
-##  build the back end for an e-commerce site by modifying starter code. You’ll configure a working Express.js API to use Sequelize to interact with a MySQL database.
+## Building out a back-end! Configure a working Express.js API to use Sequelize to interact with a MySQL database.
 # 🔎My Repo
 ## [Repo](github.com/Rini0404)
 # 🖇Live DEMO
